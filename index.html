@@ -6,11 +6,11 @@
   </head>
   <body>
     <script>
-      // Player and computer scores are initinialized
+      // Initinialize player's and computer's scores
       let playerScore = 0;
       let computerScore = 0;
 
-      //   Make the computer randomly choose rock, paper or scissors
+      // Make the computer randomly choose rock, paper or scissors
       function getComputerChoice() {
         let choice = ["Rock", "Paper", "Scissors"];
 
@@ -19,16 +19,41 @@
         return randomChoice;
       }
 
-      //    Ask the player to choose rock, paper or scissors
+      // Ask the player to choose rock, paper or scissors
       function getPlayerChoice() {
         let choice = prompt("Please choose Rock, Paper or Scissors", "");
         return capitalizeFirstLetter(choice);
       }
 
-      // Making function's playerSelection parameter case-insensitive
+      // Make function's playerSelection parameter case-insensitive
       function capitalizeFirstLetter(str) {
         // Convert the first letter to uppercase and the rest to lowercase.
         return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+      }
+
+      // Compare player and computer choices
+      function playRound(playerSelection, computerSelection) {
+        if (playerSelection == computerSelection) {
+          return "Tie game!";
+        } else if (
+          playerSelection == "Rock" &&
+          computerSelection == "Scissors"
+        ) {
+          playerScore += 1;
+          return `You win! ${playerSelection} beats ${computerSelection}!`;
+        } else if (playerSelection == "Paper" && computerSelection == "Rock") {
+          playerScore += 1;
+          return `You win! ${playerSelection} beats ${computerSelection}!`;
+        } else if (
+          playerSelection == "Scissors" &&
+          computerSelection == "Paper"
+        ) {
+          playerScore += 1;
+          return `You win! ${playerSelection} beats ${computerSelection}!`;
+        } else {
+          computerScore += 1;
+          return `You lose! ${computerSelection} beats ${playerSelection}!`;
+        }
       }
     </script>
   </body>
