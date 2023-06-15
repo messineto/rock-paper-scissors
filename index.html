@@ -55,6 +55,23 @@
           return `You lose! ${computerSelection} beats ${playerSelection}!`;
         }
       }
+
+      function game() {
+        // play the game until someone reachs the score of 5
+        while (playerScore < 5 && computerScore < 5) {
+          const playerSelection = getPlayerChoice();
+          const computerSelection = getComputerChoice();
+          alert(playRound(playerSelection, computerSelection));
+          alert(`Player ${playerScore} : ${computerScore} Computer`);
+        }
+
+        // Announce the winner
+        if (playerScore == 5) {
+          alert("You Won!");
+        } else {
+          alert("Computer Won!");
+        }
+      }
     </script>
   </body>
 </html>
