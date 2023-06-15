@@ -21,7 +21,13 @@
           "Please choose Rock, Paper or Scissors",
           ""
         );
-        return choice;
+        return capitalizeFirstLetter(choice);
+      }
+
+      // Making function's playerSelection parameter case-insensitive
+      function capitalizeFirstLetter(str) {
+        // Convert the first letter to uppercase and the rest to lowercase.
+        return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
       }
     </script>
   </body>
